@@ -3,7 +3,8 @@ from .models import Courses, Catagory
 from django.contrib import messages
 
 def home(request):
-    return render(request, "myApp/index.html")
+    courses = Courses.objects.filter(trending=1)
+    return render(request, "myApp/index.html",{"courses":courses})
 
 def register(request):
     return render(request, "myApp/register.html")

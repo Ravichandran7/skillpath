@@ -10,13 +10,23 @@ Skillpathway
     <div class="container">
       <div class="row">
         <div class="col-12">
-            <h4 class="mb-3"> courses</h4>
+            <h4 class="mb-3"> {{courses.name}} courses</h4>
             <hr style="border-color:#b8bfcd2">
         </div>
-        {{courses.name}}
-        
+        <div class="clo-4 my-3 pic-box">
+            <div class="hot"style="color: red;">Trending</div>
+            <img src="{{courses.courses_image.url}}" style="width:300px; height:200px;" class="card-image-top" alt="{{courses.name}}">
+        </div>
+        <div class="col-8 my3">
+            <h5 class="text-success">{{courses.name}}</h5>
+            <p>{{courses.course_provider_name}}</p>
+            <p>{{courses.description}}</p>
+            <h6 class="my-2">price : {{courses.price}}</h6>
+            <div class="my-3">
+                <button class="btn btn-primary"><i class="fa fa-cart"></i>Buy the course</button>
+            </div>
+        </div>
     </div>
-</div>
 </section>
             
 {% endblock content %}

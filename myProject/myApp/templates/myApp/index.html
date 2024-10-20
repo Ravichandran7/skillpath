@@ -9,7 +9,20 @@
     {% include 'myApp/inc/slider.html' %}
     <div class="container" style="margin-top:70px;">
         <div class="row">
-            <div class="col-12"><h1>home page</h1></div>
+            <div class="col-12"><h1>Trending Courses</h1></div>
+            {% for item in courses %}
+        <div class="col-md-4 col-lg-3">
+            <div class="card my-3">
+                <img src="{{item.courses_image.url}}" style="width:300px; height:200px;" class="card-image-top" alt="Categories">
+                <a href="{% url 'courses_details' item.Catagory.name item.name %}">
+                    <div class="card-body">
+                        <h5 class="card-title text-primary">{{ item.name }}</h5>
+                        <p class="card-text">{{ item.description }}</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+        {% endfor %}
         </div>
     </div>
     {% endblock content %}
