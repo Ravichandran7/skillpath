@@ -22,3 +22,5 @@ def courses_view(request, name):
     except Catagory.DoesNotExist:  # Handle the case where the category doesn't exist
         messages.warning(request, "NO SUCH COURSES FOUND")
         return redirect('courses')
+def courses_details(request,cname,pname):
+    return redirect("Courses")
