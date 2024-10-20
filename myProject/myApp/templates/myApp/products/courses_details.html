@@ -1,0 +1,23 @@
+
+{% extends 'myApp/layouts/main.html' %}
+
+{% block title %}
+Skillpathway
+{% endblock title %}
+
+{% block content %}
+<section class="bg-light py-4 my-5" style="min-height:600px;">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+            <h4 class="mb-3"> courses</h4>
+            <hr style="border-color:#b8bfcd2">
+        </div>
+        {{courses.name}}
+        
+    </div>
+</div>
+</section>
+            
+{% endblock content %}
+
