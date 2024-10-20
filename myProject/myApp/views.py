@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
-from .models import Courses, Catagory
+from myApp.form import CustomUserForm
+from .models import  Courses, Catagory
 from django.contrib import messages
 
 def home(request):
@@ -7,7 +8,8 @@ def home(request):
     return render(request, "myApp/index.html",{"courses":courses})
 
 def register(request):
-    return render(request, "myApp/register.html")
+    form=CustomUserForm()
+    return render(request, "myApp/register.html",{'form':form})
 
 def courses(request):
     categories = Catagory.objects.filter(status=0)

@@ -10,4 +10,29 @@ Skillpathway
         <div class="col-12"><h1><h1>register</h1></h1></div>
     </div>
 </div>
+    <section class="py-4 my-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-6">
+                    <form method="post" action="">
+                        {% csrf_token %}
+                        <div class="mb-4">
+                            {{form.username}}
+                        </div>
+                        <div class="mb-4">
+                            {{form.email}}
+                        </div>
+                        <div class="mb-4">
+                            {{form.password1}}
+                        </div>
+                        <div class="mb-4">
+                            {{form.password2}}
+                        </div>
+                        <button type="submit" class="btn btn-primary">Register</button>
+                    </form>
+                    <p class="my-2">Already user ?<a href="#">Login Now</a></p>
+                </div> 
+            </div>
+    </section>
+</div>
 {% endblock content %}
