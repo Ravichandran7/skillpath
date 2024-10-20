@@ -1,0 +1,35 @@
+
+{% extends 'myApp/layouts/main.html' %}
+
+{% block title %}
+Skillpathway
+{% endblock title %}
+
+{% block content %}
+{% include 'myApp/inc/slider.html' %}
+<section class="bg-light py-4 my-5" style="min-height:600px;">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+            <h4 class="mb-3">{{catagory__name}} courses</h4>
+            <hr style="border-color:#b8bfcd2">
+        </div>
+        {% for item in courses %}
+        <div class="col-md-4 col-lg-3">
+            <div class="card my-3">
+                <img src="{{item.courses_image.url}}" style="width:300px; height:200px;" class="card-image-top" alt="Categories">
+                <a href="#">
+                    <div class="card-body">
+                        <h5 class="card-title text-primary">{{ item.name }}</h5>
+                        <p class="card-text">{{ item.description }}</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+</section>
+            
+{% endblock content %}
+
